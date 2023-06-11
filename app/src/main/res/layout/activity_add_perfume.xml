@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPerfumeActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_TambahPerfume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_Merek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="180">
+            <EditText
+                android:id="@+id/et_Merek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Merek Perfume"
+                android:inputType="none"
+                android:maxLength="180"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_NamaPerfume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="180">
+            <EditText
+                android:id="@+id/et_NamaPerfume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Perfume"
+                android:inputType="none"
+                android:maxLength="180"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_Deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="180">
+            <EditText
+                android:id="@+id/et_Deskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Deskripsi Perfume"
+                android:inputType="none"
+                android:maxLength="180"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_Jenis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="180">
+            <EditText
+                android:id="@+id/et_Jenis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jenis Perfume"
+                android:inputType="none"
+                android:maxLength="180"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_Ukuran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="180">
+            <EditText
+                android:id="@+id/et_Ukuran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ukuran Perfume"
+                android:inputType="none"
+                android:maxLength="180"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_Harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="180">
+            <EditText
+                android:id="@+id/et_Harga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Harga Perfume"
+                android:inputType="none"
+                android:maxLength="180"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_Gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="180">
+            <EditText
+                android:id="@+id/et_Gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gender Perfume"
+                android:inputType="none"
+                android:maxLength="180"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_TambahPerfume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textAllCaps="true"
+            android:layout_marginTop="16dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_add"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</RelativeLayout>
+
