@@ -14,7 +14,7 @@ import com.nadiya.scentlibrary.databinding.ActivityMainBinding;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private ActivityMainBinding binding;
     private AddViewAdapter addViewAdapter;
     private List<Add> data;
@@ -76,5 +76,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+}
+
     }
 }
