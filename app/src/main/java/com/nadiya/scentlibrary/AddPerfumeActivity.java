@@ -35,16 +35,40 @@ public class AddPerfumeActivity extends AppCompatActivity {
                     bolehUnggah = false;
                     binding.etMerek.setError("Merek tidak boleh kosong!");
                 }
+                if (TextUtils.isEmpty(nama)) {
+                    bolehUnggah = false;
+                    binding.etNamaPefume.setError("Merek tidak boleh kosong!");
+                }
+                if (TextUtils.isEmpty(deskripsi)) {
+                    bolehUnggah = false;
+                    binding.etDeskripsi.setError("Merek tidak boleh kosong!");
+                }
+                if (TextUtils.isEmpty(jenis)) {
+                    bolehUnggah = false;
+                    binding.etJenis.setError("Merek tidak boleh kosong!");
+                }
+                if (TextUtils.isEmpty(ukuran)) {
+                    bolehUnggah = false;
+                    binding.etUkuran.setError("Merek tidak boleh kosong!");
+                }
+                if (TextUtils.isEmpty(harga)) {
+                    bolehUnggah = false;
+                    binding.etHarga.setError("Merek tidak boleh kosong!");
+                }
+                if (TextUtils.isEmpty(gender)) {
+                    bolehUnggah = false;
+                    binding.etGender.setError("Merek tidak boleh kosong!");
+                }
 
                 if (bolehUnggah) {
-                    String username = Utilities.getValue(AddPerfumeActivity.this, "xUsername");
-                    addPerfume(username, merek);
+                    String userId = Utilities.getValue(AddPerfumeActivity.this, "xUsername");
+                    addPerfume(userId, merek,nama,deskripsi,jenis,ukuran,harga,gender);
                 }
             }
         });
     }
 
-    private void addPerfume(String username, String merek) {
+    private void addPerfume(String userId, String merek,String nama,String deskripsi,String jenis,String ukuran,Integer harga,String gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
         // proses untuk mengunggah konten...
         binding.progressBar.setVisibility(View.GONE);

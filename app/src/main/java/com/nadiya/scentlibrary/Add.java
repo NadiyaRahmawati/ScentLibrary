@@ -1,6 +1,7 @@
 package com.nadiya.scentlibrary;
 
 public class Add {
+    private String id;
     private String MerekPerfume;
     private String NamaPerfume;
     private String DeskripsiPerfume;
@@ -8,6 +9,30 @@ public class Add {
     private String UkuranPerfume;
     private String HargaPerfume;
     private String GenderPerfume;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setMerekPerfume(String merekPerfume) {
+        MerekPerfume = merekPerfume;
+    }
+
+    public void setJenisPefume(String jenisPefume) {
+        JenisPefume = jenisPefume;
+    }
+
+    public String getUkuranPerfume() {
+        return UkuranPerfume;
+    }
+
+    public void setUkuranPerfume(String ukuranPerfume) {
+        UkuranPerfume = ukuranPerfume;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getMerekPerfume() {
         return MerekPerfume;

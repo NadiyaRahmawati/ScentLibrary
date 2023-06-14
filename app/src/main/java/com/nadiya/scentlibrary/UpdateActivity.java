@@ -3,6 +3,7 @@ package com.nadiya.scentlibrary;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.nadiya.scentlibrary.databinding.ActivityUpdateBinding;
@@ -21,39 +22,63 @@ public class UpdateActivity extends AppCompatActivity {
         add = getIntent().getParcelableExtra("EXTRA_DATA");
         String id = add.getId();
 
-        binding.etNama.setText(daftar.getNama());
-        binding.etAlamat.setText(daftar.getAlamat());
-        binding.etDeskripsi.setText(daftar.getDeskripsi());
-        binding.btnUpdate.setOnClickListener(new View.OnClickListener() {
+        binding.etMerek.setText(add.getMerekPerfume());
+        binding.etNamaPefume.setText(add.getNamaPerfume());
+        binding.etDeskripsi.setText(add.getDeskripsiPerfume());
+        binding.etJenis.setText(add.getJenisPefume());
+        binding.etUkuran.setText(add.getUkuranPerfume());
+        binding.etHarga.setText(add.getHargaPerfume());
+        binding.etGender.setText(add.getGenderPerfume());
+
+        binding.btnUpdatePerfume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nama = binding.etNama.getText().toString();
-                String alamat = binding.etAlamat.getText().toString();
-                String deskripsi= binding.etDeskripsi.getText().toString();
+                String Merek = binding.etMerek.getText().toString();
+                String NamaPerfume = binding.etNamaPefume.getText().toString();
+                String Deskripsi = binding.etDeskripsi.getText().toString();
+                String Jenis = binding.etJenis.getText().toString();
+                String Ukuran = binding.etUkuran.getText().toString();
+                String Harga = binding.etHarga.getText().toString();
+                String Gender = binding.etGender.getText().toString();
 
                 boolean bolehUpdate = true;
-                if (TextUtils.isEmpty(nama)) {
+                if (TextUtils.isEmpty(Merek)) {
                     bolehUpdate = false;
-                    binding.etNama.setError("Nama tidak boleh kosong!");
+                    binding.etMerek.setError("Merek tidak boleh kosong!");
                 }
-                if (TextUtils.isEmpty(alamat)) {
+                if (TextUtils.isEmpty(NamaPerfume)) {
                     bolehUpdate = false;
-                    binding.etAlamat.setError("Alamat tidak boleh kosong!");
+                    binding.etNamaPefume.setError("Nama Perfume tidak boleh kosong!");
                 }
-                if (TextUtils.isEmpty(deskripsi)) {
+                if (TextUtils.isEmpty(Deskripsi)) {
                     bolehUpdate = false;
-                    binding.etDeskripsi.setError("Nama tidak boleh kosong!");
+                    binding.etDeskripsi.setError("Deskripsi tidak boleh kosong!");
                 }
-
+                if (TextUtils.isEmpty(Jenis)) {
+                    bolehUpdate = false;
+                    binding.etJenis.setError("Jenis tidak boleh kosong!");
+                }
+                if (TextUtils.isEmpty(Ukuran)) {
+                    bolehUpdate = false;
+                    binding.etUkuran.setError("Ukursn tidak boleh kosong!");
+                }
+                if (TextUtils.isEmpty(Harga)) {
+                    bolehUpdate = false;
+                    binding.etHarga.setError("Harga tidak boleh kosong!");
+                }
+                if (TextUtils.isEmpty(Gender)) {
+                    bolehUpdate = false;
+                    binding.etGender.setError("Gender tidak boleh kosong!");
+                }
 
                 if (bolehUpdate) {
-                    updateUnggah(id,nama,alamat,deskripsi);
+                    updateUnggah(Merek, NamaPerfume, Deskripsi, Jenis, Ukuran, Harga, Gender);
                 }
             }
         });
     }
 
-    private void updateUnggah(String userId, String nama , String alamat , String deskripsi) {
+    private void updateUnggah(String Merek, String NamaPerfume , String Deskripsi , String Jenis, String Ukuran, String Harga, String Gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
 
         binding.progressBar.setVisibility(View.GONE);
