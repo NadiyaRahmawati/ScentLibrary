@@ -37,8 +37,8 @@ public class UpdateActivity extends AppCompatActivity {
                 String NamaPerfume = binding.etNamaPefume.getText().toString();
                 String Deskripsi = binding.etDeskripsi.getText().toString();
                 String Jenis = binding.etJenis.getText().toString();
-                int Ukuran = binding.etUkuran.getText().toString();
-                int Harga = binding.etHarga.getText().toString();
+                int Ukuran = Integer.parseInt(binding.etUkuran.getText().toString());
+                int Harga = Integer.parseInt(binding.etHarga.getText().toString());
                 String Gender = binding.etGender.getText().toString();
 
                 boolean bolehUpdate = true;
@@ -58,11 +58,11 @@ public class UpdateActivity extends AppCompatActivity {
                     bolehUpdate = false;
                     binding.etJenis.setError("Jenis tidak boleh kosong!");
                 }
-                if (TextUtils.isEmpty(Ukuran)) {
+                if (Ukuran == 0) {
                     bolehUpdate = false;
                     binding.etUkuran.setError("Ukuran tidak boleh kosong!");
                 }
-                if (TextUtils.isEmpty(Harga)) {
+                if (Harga == 0) {
                     bolehUpdate = false;
                     binding.etHarga.setError("Harga tidak boleh kosong!");
                 }
@@ -72,13 +72,13 @@ public class UpdateActivity extends AppCompatActivity {
                 }
 
                 if (bolehUpdate) {
-                    updateUnggah(Merek, NamaPerfume, Deskripsi, Jenis, Ukuran, Harga, Gender);
+                    updateAdd(id, Merek, NamaPerfume, Deskripsi, Jenis, Ukuran, Harga, Gender);
                 }
             }
         });
     }
 
-    private void updateUnggah(String Merek, String NamaPerfume , String Deskripsi , String Jenis, int Ukuran, int Harga, String Gender) {
+    private void updateAdd(String userId, String Merek, String NamaPerfume , String Deskripsi , String Jenis, int Ukuran, int Harga, String Gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
 
         binding.progressBar.setVisibility(View.GONE);

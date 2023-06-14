@@ -21,29 +21,65 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv_MerekParfum"
+                android:id="@+id/tv_MerekPerfume"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="MerekParfum"/>
+                tools:text="MerekPerfume"/>
 
             <TextView
-                android:id="@+id/tv_DeskripsiParfum"
+                android:id="@+id/tv_NamaPerfume"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_MerekParfum"
-                android:layout_marginTop="2dp"
-                android:text="DeskripsiParfum"/>
+                android:layout_below="@+id/tv_MerekPerfume"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="NamaPerfume"/>
 
             <TextView
-                android:id="@+id/tv_created_date"
+                android:id="@+id/tv_DeskripsiPerfume"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_DeskripsiParfum"
-                android:layout_marginTop="2dp"
-                android:textAlignment="textEnd"
-                tools:text="01-01-2023 20:20:00"/>
+                android:layout_below="@+id/tv_NamaPerfume"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="DeskripsiPerfume"/>
+            <TextView
+                android:id="@+id/tv_JenisPerfume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_DeskripsiPerfume"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="JenisPerfume"/>
+
+            <TextView
+                android:id="@+id/tv_UkuranPerfume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_JenisPerfume"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="UkuranPerfume"/>
+
+            <TextView
+                android:id="@+id/tv_HargaPerfume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_UkuranPerfume"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="HargaPerfume"/>
+
+            <TextView
+                android:id="@+id/tv_GenderPerfume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_HargaPerfume"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="GenderPerfume"/>
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

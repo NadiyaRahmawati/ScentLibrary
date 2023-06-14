@@ -6,8 +6,8 @@ public class Add {
     private String NamaPerfume;
     private String DeskripsiPerfume;
     private String JenisPefume;
-    private String UkuranPerfume;
-    private String HargaPerfume;
+    private Integer UkuranPerfume;
+    private Integer HargaPerfume;
     private String GenderPerfume;
 
     public String getId() {
@@ -22,11 +22,11 @@ public class Add {
         JenisPefume = jenisPefume;
     }
 
-    public String getUkuranPerfume() {
+    public Integer getUkuranPerfume() {
         return UkuranPerfume;
     }
 
-    public void setUkuranPerfume(String ukuranPerfume) {
+    public void setUkuranPerfume(Integer ukuranPerfume) {
         UkuranPerfume = ukuranPerfume;
     }
 
@@ -66,7 +66,7 @@ public class Add {
         this.JenisPefume = jenisPerfume;
     }
 
-    public String getHargaPerfume() {
+    public Integer getHargaPerfume() {
         return HargaPerfume;
     }
 
