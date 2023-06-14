@@ -1,59 +1,60 @@
 package com.nadiya.scentlibrary;
 
 public class Add {
-    private String id;
-    private String content;
-    private String user_id;
-    private String created_date;
-    private String modified_date;
-    private String username;
+    private String MerekPerfume;
+    private String NamaPerfume;
+    private String DeskripsiPerfume;
+    private String JenisPefume;
+    private String UkuranPerfume;
+    private String HargaPerfume;
+    private String GenderPerfume;
 
-    public String getId() {
-        return id;
+    public String getMerekPerfume() {
+        return MerekPerfume;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void MerekPerfume(String merekPerfume) {
+        this.MerekPerfume = merekPerfume;
     }
 
-    public String getContent() {
-        return content;
+    public String getNamaPerfume() {
+        return NamaPerfume;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setNamaPerfume(String namaPerfume) {
+        this.NamaPerfume= namaPerfume;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getDeskripsiPerfume() {
+        return DeskripsiPerfume;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setDeskripsiPerfume(String deskripsiPerfume) {
+        this.DeskripsiPerfume = DeskripsiPerfume;
     }
 
-    public String getCreated_date() {
-        return created_date;
+    public String getJenisPefume() {
+        return JenisPefume;
     }
 
-    public void setCreated_date(String created_date) {
-        this.created_date = created_date;
+    public void setJenisPerfume(String jenisPerfume) {
+        this.JenisPefume = jenisPerfume;
     }
 
-    public String getModified_date() {
-        return modified_date;
+    public String getHargaPerfume() {
+        return HargaPerfume;
     }
 
-    public void setModified_date(String modified_date) {
-        this.modified_date = modified_date;
+    public void setHargaPerfume(String hargaPerfume) {
+        this.HargaPerfume = HargaPerfume;
     }
 
-    public String getUsername() {
-        return username;
+    public String getGenderPerfume() {
+        return GenderPerfume;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setGenderPerfume(String genderPerfume) {
+        this.GenderPerfume = GenderPerfume;
 }
 
 }

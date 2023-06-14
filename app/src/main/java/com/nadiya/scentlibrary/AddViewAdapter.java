@@ -12,39 +12,27 @@ import org.jetbrains.annotations.NonNls;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddViewAdapter extends RecyclerView.Adapter<AddViewAdapter.ViewHolder> {
-    private List<Add> data = new ArrayList<>();
-
-    public void setData(List<Add> data) {
-        this.data = data;
-        notifyDataSetChanged();
-    }
+public class AddViewAdapter extends RecyclerView.Adapter<AddViewAdapter.ViewHolder>{
 
     @NonNull
     @Override
-    public AddViewAdapter.ViewHolderonCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new RecyclerView.ViewHolder(AddViewAdapter.inflate(LayoutInflater.from(parent.getContext(), parent, false));
+    public AddViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return null;
     }
 
     @Override
     public void onBindViewHolder(@NonNull AddViewAdapter.ViewHolder holder, int position) {
-        int pos = holder.getAdapterPosition();
-        Add add = data.get(pos);
-        holder.AddViewAdapter.tv_Username.setText(add.getUsername());
-        holder.AddViewAdapter.tv_createdDate.setText(add.getCreated_date());
+
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private AddViewAdapter addViewAdapter;
-
         public ViewHolder(@NonNull View itemView) {
-            super(itemView.getRootView());
-            AddViewAdapter = itemView;
+            super(itemView);
         }
-
     }
+}
