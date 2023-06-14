@@ -25,7 +25,7 @@ public class AddPerfumeActivity extends AppCompatActivity {
                 String nama = binding.etNamaPefume.getText().toString();
                 String deskripsi = binding.etDeskripsi.getText().toString();
                 String jenis = binding.etJenis.getText().toString();
-                String ukuran = binding.etUkuran.getText().toString();
+                int ukuran = binding.etUkuran.getText().toString();
                 int harga = binding.etHarga.getText().toString();
                 String gender = binding.etGender.getText().toString();
 
@@ -62,13 +62,13 @@ public class AddPerfumeActivity extends AppCompatActivity {
 
                 if (bolehUnggah) {
                     String userId = Utilities.getValue(AddPerfumeActivity.this, "xUsername");
-                    addPerfume(userId, merek,nama,deskripsi,jenis,ukuran,harga,gender);
+                    addPerfume(merek, nama, deskripsi, jenis, ukuran, harga, gender);
                 }
             }
         });
     }
 
-    private void addPerfume(String userId, String merek,String nama,String deskripsi,String jenis,String ukuran,Integer harga,String gender) {
+    private void addPerfume(String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
         // proses untuk mengunggah konten...
         binding.progressBar.setVisibility(View.GONE);

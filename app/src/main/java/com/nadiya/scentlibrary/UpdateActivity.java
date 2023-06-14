@@ -37,8 +37,8 @@ public class UpdateActivity extends AppCompatActivity {
                 String NamaPerfume = binding.etNamaPefume.getText().toString();
                 String Deskripsi = binding.etDeskripsi.getText().toString();
                 String Jenis = binding.etJenis.getText().toString();
-                String Ukuran = binding.etUkuran.getText().toString();
-                String Harga = binding.etHarga.getText().toString();
+                int Ukuran = binding.etUkuran.getText().toString();
+                int Harga = binding.etHarga.getText().toString();
                 String Gender = binding.etGender.getText().toString();
 
                 boolean bolehUpdate = true;
@@ -60,7 +60,7 @@ public class UpdateActivity extends AppCompatActivity {
                 }
                 if (TextUtils.isEmpty(Ukuran)) {
                     bolehUpdate = false;
-                    binding.etUkuran.setError("Ukursn tidak boleh kosong!");
+                    binding.etUkuran.setError("Ukuran tidak boleh kosong!");
                 }
                 if (TextUtils.isEmpty(Harga)) {
                     bolehUpdate = false;
@@ -78,7 +78,7 @@ public class UpdateActivity extends AppCompatActivity {
         });
     }
 
-    private void updateUnggah(String Merek, String NamaPerfume , String Deskripsi , String Jenis, String Ukuran, String Harga, String Gender) {
+    private void updateUnggah(String Merek, String NamaPerfume , String Deskripsi , String Jenis, int Ukuran, int Harga, String Gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
 
         binding.progressBar.setVisibility(View.GONE);
