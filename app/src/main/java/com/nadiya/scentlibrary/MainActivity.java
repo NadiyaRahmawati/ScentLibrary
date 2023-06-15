@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Add> data;
 
     protected void onCreate(Bundle saveInstanceState) {
-
         super.onCreate(saveInstanceState);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -44,17 +44,17 @@ public class MainActivity extends AppCompatActivity {
         addViewAdapter = new AddViewAdapter();
         binding.rvAdd.setLayoutManager(new LinearLayoutManager(this));
         binding.rvAdd.setAdapter(addViewAdapter);
-        AddViewAdapter.OnItemLongClickListener(new AddViewAdapter.OnItemLongClickListener() {
+        addViewAdapter.setOnItemLongClickListener(new AddViewAdapter.OnItemLongClickListener() {
             @Override
             public void onItemLongClick(View v, Add add, int position) {
                 PopupMenu popupMenu = new PopupMenu(MainActivity.this, v);
-                popupMenu.inflate(R.menu.menu_perfume);
+                popupMenu.inflate(R.menu.menu_popup);
                 popupMenu.setGravity(Gravity.RIGHT);
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         int idMenu = item.getItemId();
-                        if ( (idMenu == R.id.action_edit) {
+                        if (idMenu == R.id.action_edit) {
                             Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
                             intent.putExtra("EXTRA_DATA", add);
                             startActivity(intent);
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
     private void getAllAdd() {
         binding.progressBar.setVisibility(View.VISIBLE);
         APIService api = Utilities.getRetrofit().create(APIService.class);
-        Call<ValueData<List<Add>>> call = api.getAdd();
+        Call<ValueData<List<Add>>> call = api.getPerfume();
         call.enqueue(new Callback<ValueData<List<Add>>>() {
             @Override
             public void onResponse(Call<ValueData<List<Add>>> call, Response<ValueData<List<Add>>> response) {
