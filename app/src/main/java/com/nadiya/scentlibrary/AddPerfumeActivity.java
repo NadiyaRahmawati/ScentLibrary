@@ -29,46 +29,45 @@ public class AddPerfumeActivity extends AppCompatActivity {
                 int Harga = Integer.parseInt(binding.etHarga.getText().toString());
                 String gender = binding.etGender.getText().toString();
 
-                boolean bolehUnggah = true;
+                boolean bolehAdd = true;
 
                 if (TextUtils.isEmpty(merek)) {
-                    bolehUnggah = false;
+                    bolehAdd = false;
                     binding.etMerek.setError("Merek tidak boleh kosong!");
                 }
                 if (TextUtils.isEmpty(nama)) {
-                    bolehUnggah = false;
+                    bolehAdd = false;
                     binding.etNamaPefume.setError("Nama tidak boleh kosong!");
                 }
                 if (TextUtils.isEmpty(deskripsi)) {
-                    bolehUnggah = false;
+                    bolehAdd = false;
                     binding.etDeskripsi.setError("Deskripsi tidak boleh kosong!");
                 }
                 if (TextUtils.isEmpty(jenis)) {
-                    bolehUnggah = false;
+                    bolehAdd = false;
                     binding.etJenis.setError("Jenis tidak boleh kosong!");
                 }
                 if (Ukuran == 0) {
-                    bolehUnggah = false;
+                    bolehAdd = false;
                     binding.etUkuran.setError("Ukuran tidak boleh kosong!");
                 }
                 if (Harga == 0) {
-                    bolehUnggah = false;
+                    bolehAdd = false;
                     binding.etHarga.setError("Harga tidak boleh kosong!");
                 }
                 if (TextUtils.isEmpty(gender)) {
-                    bolehUnggah = false;
+                    bolehAdd = false;
                     binding.etGender.setError("Gender tidak boleh kosong!");
                 }
-
-                if (bolehUnggah) {
+                if (bolehAdd) {
                     String userId = Utilities.getValue(AddPerfumeActivity.this, "xUsername");
-                    addPerfume(merek, nama, deskripsi, jenis, Ukuran, Harga, gender);
+                    addPerfume(userId, merek, nama, deskripsi, jenis, Ukuran, Harga, gender);
                 }
             }
         });
     }
 
-    private void addPerfume(String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender) {
+    private void addPerfume(String userId, String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
         // proses untuk mengunggah konten...
         binding.progressBar.setVisibility(View.GONE);

@@ -6,8 +6,6 @@ import android.os.Parcelable;
 public class User implements Parcelable {
     private String id;
     private String username;
-    private String created_date;
-    private String modified_date;
 
     public User() {
     }
@@ -15,16 +13,12 @@ public class User implements Parcelable {
     protected User(Parcel in) {
         id = in.readString();
         username = in.readString();
-        created_date = in.readString();
-        modified_date = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(id);
         dest.writeString(username);
-        dest.writeString(created_date);
-        dest.writeString(modified_date);
     }
 
     @Override
@@ -60,19 +54,4 @@ public class User implements Parcelable {
         this.username = username;
     }
 
-    public String getCreated_date() {
-        return created_date;
-    }
-
-    public void setCreated_date(String created_date) {
-        this.created_date = created_date;
-    }
-
-    public String getModified_date() {
-        return modified_date;
-    }
-
-    public void setModified_date(String modified_date) {
-        this.modified_date = modified_date;
-    }
 }

@@ -9,10 +9,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.nadiya.scentlibrary.databinding.ActivityMainBinding;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
@@ -27,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        if (Utilities.checkValue(MainActivity.this, "xUserId")){
+        if (!Utilities.checkValue(MainActivity.this, "xUserId")){
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -47,13 +52,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onResume() {
+        super.onResume();
         getAllAdd();
     }
 
     private void getAllAdd() {
         binding.progressBar.setVisibility(View.VISIBLE);
+        APIService api = Utilities.getRetrofit().create(APIService.class);
+        Call<ValueData<List<Add>>> call = api.getAdd();
+        call.enqueue(new Callback<ValueData<List<Add>>>() {
+            @Override
+            public void onResponse(Call<ValueData<List<Add>>> call, Response<ValueData<List<Add>>> response) {
+                binding.progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onFailure(Call<ValueData<List<Add>>> call, Throwable t) {
+                binding.progressBar.setVisibility(View.GONE);
+                System.out.println("Retrofit Error : " + t.getMessage());
+                Toast.makeText(MainActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
         //memanggil data add dari server
         binding.progressBar.setVisibility(View.GONE);
     }
