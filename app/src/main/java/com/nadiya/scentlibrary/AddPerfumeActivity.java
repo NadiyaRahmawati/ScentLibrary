@@ -5,8 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Toast;
 
 import com.nadiya.scentlibrary.databinding.ActivityAddPerfumeBinding;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AddPerfumeActivity extends AppCompatActivity {
     private ActivityAddPerfumeBinding binding;
@@ -60,7 +65,7 @@ public class AddPerfumeActivity extends AppCompatActivity {
                     binding.etGender.setError("Gender tidak boleh kosong!");
                 }
                 if (bolehAdd) {
-                    String userId = Utilities.getValue(AddPerfumeActivity.this, "xUsername");
+                    String userId = Utilities.getValue(AddPerfumeActivity.this, "xUserId");
                     addPerfume(userId, merek, nama, deskripsi, jenis, Ukuran, Harga, gender);
                 }
             }
@@ -69,8 +74,34 @@ public class AddPerfumeActivity extends AppCompatActivity {
 
     private void addPerfume(String userId, String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
-        // proses untuk mengunggah konten...
-        binding.progressBar.setVisibility(View.GONE);
+        APIService api = Utilities.getRetrofit().create(APIService.class);
+        Call<ValueNoData> call = api.addPerfume(userId, merek, nama, deskripsi, jenis, ukuran, harga, gender);
+        call.enqueue(new Callback<ValueNoData>() {
+            @Override
+            public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
+                binding.progressBar.setVisibility(View.GONE);
+                if (response.code() == 200) {
+                    int success = response.body().getSuccess();
+                    String message = response.body().getMessage();
+
+                    if (success == 1) {
+                        Toast.makeText(AddPerfumeActivity.this, message, Toast.LENGTH_SHORT).show();
+                        finish();
+                    } else {
+                        Toast.makeText(AddPerfumeActivity.this, message, Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(AddPerfumeActivity.this, "Response " + response.code(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ValueNoData> call, Throwable t) {
+                binding.progressBar.setVisibility(View.GONE);
+                System.out.println("Retrofit Error : " + t.getMessage());
+                Toast.makeText(AddPerfumeActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

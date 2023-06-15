@@ -74,6 +74,7 @@ public class UpdateActivity extends AppCompatActivity {
                 if (bolehUpdate) {
                     updateAdd(id, Merek, NamaPerfume, Deskripsi, Jenis, Ukuran, Harga, Gender);
                 }
+                return bolehUpdate;
             }
         });
     }

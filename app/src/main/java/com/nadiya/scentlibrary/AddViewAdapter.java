@@ -1,7 +1,9 @@
 package com.nadiya.scentlibrary;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,11 +15,17 @@ import java.util.List;
 
 public class AddViewAdapter extends RecyclerView.Adapter<AddViewAdapter.ViewHolder> {
     private List<Add> data = new ArrayList<>();
+    private OnItemLongClickListener onItemLongClickListener;
 
     public void setData (List<Add>data) {
         this.data = data;
         notifyDataSetChanged();
     }
+
+    public void setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
+        this.onItemLongClickListener = onItemLongClickListener;
+    }
+
 
     @NonNull
     @Override
@@ -36,12 +44,18 @@ public class AddViewAdapter extends RecyclerView.Adapter<AddViewAdapter.ViewHold
         holder.itemAddBinding.tvUkuranPerfume.setText(String.valueOf(add.getUkuranPerfume()));
         holder.itemAddBinding.tvHargaPerfume.setText(String.valueOf(add.getHargaPerfume()));
         holder.itemAddBinding.tvGenderPerfume.setText(add.getGenderPerfume());
-
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                onItemLongClickListener.onItemLongClick(v, add, pos);
+                return false;
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return data.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -50,5 +64,9 @@ public class AddViewAdapter extends RecyclerView.Adapter<AddViewAdapter.ViewHold
             super(itemView.getRoot());
             itemAddBinding = itemView;
         }
+    }
+
+    public interface OnItemLongClickListener {
+        void onItemLongClick(View v, Add add, int position);
     }
 }

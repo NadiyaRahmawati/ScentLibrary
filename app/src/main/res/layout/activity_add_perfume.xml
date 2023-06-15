@@ -6,12 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".AddPerfumeActivity">
 
-    <LinearLayout
-        android:id="@+id/ll_TambahPerfume"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_margin="16dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_Merek"
@@ -19,6 +17,7 @@
             android:layout_height="wrap_content"
             app:counterEnabled="true"
             app:counterMaxLength="180">
+
             <EditText
                 android:id="@+id/et_Merek"
                 android:layout_width="match_parent"
@@ -49,6 +48,7 @@
             android:layout_height="wrap_content"
             app:counterEnabled="true"
             app:counterMaxLength="180">
+
             <EditText
                 android:id="@+id/et_Deskripsi"
                 android:layout_width="match_parent"
@@ -56,6 +56,7 @@
                 android:hint="Deskripsi Perfume"
                 android:inputType="none"
                 android:maxLength="180"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -64,6 +65,7 @@
             android:layout_height="wrap_content"
             app:counterEnabled="true"
             app:counterMaxLength="180">
+
             <EditText
                 android:id="@+id/et_Jenis"
                 android:layout_width="match_parent"
@@ -71,6 +73,7 @@
                 android:hint="Jenis Perfume"
                 android:inputType="none"
                 android:maxLength="180"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -79,6 +82,7 @@
             android:layout_height="wrap_content"
             app:counterEnabled="true"
             app:counterMaxLength="180">
+
             <EditText
                 android:id="@+id/et_Ukuran"
                 android:layout_width="match_parent"
@@ -86,6 +90,7 @@
                 android:hint="Ukuran Perfume"
                 android:inputType="none"
                 android:maxLength="180"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -94,6 +99,7 @@
             android:layout_height="wrap_content"
             app:counterEnabled="true"
             app:counterMaxLength="180">
+
             <EditText
                 android:id="@+id/et_Harga"
                 android:layout_width="match_parent"
@@ -101,6 +107,7 @@
                 android:hint="Harga Perfume"
                 android:inputType="none"
                 android:maxLength="180"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -109,6 +116,7 @@
             android:layout_height="wrap_content"
             app:counterEnabled="true"
             app:counterMaxLength="180">
+
             <EditText
                 android:id="@+id/et_Gender"
                 android:layout_width="match_parent"
@@ -116,6 +124,7 @@
                 android:hint="Gender Perfume"
                 android:inputType="none"
                 android:maxLength="180"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -130,11 +139,12 @@
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_add"
+            android:layout_below="@+id/btn_TambahPerfume"
             android:layout_marginTop="8dp"
             android:layout_centerHorizontal="true"
             android:visibility="gone"/>
-    </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>
 
