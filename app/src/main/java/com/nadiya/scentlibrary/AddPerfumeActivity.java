@@ -25,8 +25,8 @@ public class AddPerfumeActivity extends AppCompatActivity {
                 String nama = binding.etNamaPefume.getText().toString();
                 String deskripsi = binding.etDeskripsi.getText().toString();
                 String jenis = binding.etJenis.getText().toString();
-                int ukuran = binding.etUkuran.getText().toString();
-                int harga = binding.etHarga.getText().toString();
+                int Ukuran = Integer.parseInt(binding.etUkuran.getText().toString());
+                int Harga = Integer.parseInt(binding.etHarga.getText().toString());
                 String gender = binding.etGender.getText().toString();
 
                 boolean bolehUnggah = true;
@@ -37,32 +37,32 @@ public class AddPerfumeActivity extends AppCompatActivity {
                 }
                 if (TextUtils.isEmpty(nama)) {
                     bolehUnggah = false;
-                    binding.etNamaPefume.setError("Merek tidak boleh kosong!");
+                    binding.etNamaPefume.setError("Nama tidak boleh kosong!");
                 }
                 if (TextUtils.isEmpty(deskripsi)) {
                     bolehUnggah = false;
-                    binding.etDeskripsi.setError("Merek tidak boleh kosong!");
+                    binding.etDeskripsi.setError("Deskripsi tidak boleh kosong!");
                 }
                 if (TextUtils.isEmpty(jenis)) {
                     bolehUnggah = false;
-                    binding.etJenis.setError("Merek tidak boleh kosong!");
+                    binding.etJenis.setError("Jenis tidak boleh kosong!");
                 }
-                if (TextUtils.isEmpty(ukuran)) {
+                if (Ukuran == 0) {
                     bolehUnggah = false;
-                    binding.etUkuran.setError("Merek tidak boleh kosong!");
+                    binding.etUkuran.setError("Ukuran tidak boleh kosong!");
                 }
-                if (TextUtils.isEmpty(harga)) {
+                if (Harga == 0) {
                     bolehUnggah = false;
-                    binding.etHarga.setError("Merek tidak boleh kosong!");
+                    binding.etHarga.setError("Harga tidak boleh kosong!");
                 }
                 if (TextUtils.isEmpty(gender)) {
                     bolehUnggah = false;
-                    binding.etGender.setError("Merek tidak boleh kosong!");
+                    binding.etGender.setError("Gender tidak boleh kosong!");
                 }
 
                 if (bolehUnggah) {
                     String userId = Utilities.getValue(AddPerfumeActivity.this, "xUsername");
-                    addPerfume(merek, nama, deskripsi, jenis, ukuran, harga, gender);
+                    addPerfume(merek, nama, deskripsi, jenis, Ukuran, Harga, gender);
                 }
             }
         });

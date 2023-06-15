@@ -26,6 +26,11 @@ public interface APIService {
     @FormUrlEncoded
     @POST("perfume")
     Call<ValueNoData> addPerfume(@Field("MerekPerfume") String MerkPerfume,
-                                 @Field("NamaPerfume") String 
-
+                                 @Field("NamaPerfume") String NamaPerfume,
+                                 @Field("DeskripsiPerfume") String DeskripsiPerfume,
+                                 @Field("JenisPerfume") String JenisPerfume,
+                                 @Field("UkuranPerfume") Integer UkuranPerfume,
+                                 @Field("HargaPerfume") Integer HargaPerfume,
+                                 @Field("GenderPerfume") String GenderPerfume,
+                                 @Field("User_id") String User_id);
 }
