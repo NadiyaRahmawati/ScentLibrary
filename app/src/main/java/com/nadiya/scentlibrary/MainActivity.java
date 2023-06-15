@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getAllAdd() {
         binding.progressBar.setVisibility(View.VISIBLE);
-        //memanggil data unggah dari server
+        //memanggil data add dari server
         binding.progressBar.setVisibility(View.GONE);
     }
 
