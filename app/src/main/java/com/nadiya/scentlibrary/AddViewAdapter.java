@@ -29,7 +29,13 @@ public class AddViewAdapter extends RecyclerView.Adapter<AddViewAdapter.ViewHold
     public void onBindViewHolder(@NonNull AddViewAdapter.ViewHolder holder, int position) {
         int pos = holder.getAdapterPosition();
         Add add = data.get(pos);
-        holder.itemAddBinding.
+        holder.itemAddBinding.tvMerekPerfume.setText(add.getMerekPerfume());
+        holder.itemAddBinding.tvNamaPerfume.setText(add.getNamaPerfume());
+        holder.itemAddBinding.tvDeskripsiPerfume.setText(add.getDeskripsiPerfume());
+        holder.itemAddBinding.tvJenisPerfume.setText(add.getJenisPefume());
+        holder.itemAddBinding.tvUkuranPerfume.setText(String.valueOf(add.getUkuranPerfume()));
+        holder.itemAddBinding.tvHargaPerfume.setText(String.valueOf(add.getHargaPerfume()));
+        holder.itemAddBinding.tvGenderPerfume.setText(add.getGenderPerfume());
 
     }
 
@@ -39,8 +45,10 @@ public class AddViewAdapter extends RecyclerView.Adapter<AddViewAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public ViewHolder(@NonNull @NonNull ItemAddBinding itemView) {
-            super(itemView);
+        private  ItemAddBinding itemAddBinding;
+        public ViewHolder( @NonNull ItemAddBinding itemView) {
+            super(itemView.getRoot());
+            itemAddBinding = itemView;
         }
     }
 }

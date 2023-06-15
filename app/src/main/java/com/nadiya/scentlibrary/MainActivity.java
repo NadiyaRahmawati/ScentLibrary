@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         }
         addViewAdapter = new AddViewAdapter();
         binding.rvAdd.setLayoutManager(new LinearLayoutManager(this));
-        binding.rvAdd.setAdapter(AddViewAdapter);
+        binding.rvAdd.setAdapter(addViewAdapter);
 
         binding.fabInput.setOnClickListener(new View.OnClickListener() {
             @Override
