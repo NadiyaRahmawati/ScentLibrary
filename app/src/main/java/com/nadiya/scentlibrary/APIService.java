@@ -32,9 +32,9 @@ public interface APIService {
                                  @Field("NamaPerfume") String NamaPerfume,
                                  @Field("DeskripsiPerfume") String DeskripsiPerfume,
                                  @Field("JenisPerfume") String JenisPerfume,
-                                 @Field("UkuranPerfume") String UkuranPerfume,
+                                 @Field("UkuranPerfume") Integer UkuranPerfume,
                                  @Field("HargaPerfume") Integer HargaPerfume,
-                                 @Field("GenderPerfume") int GenderPerfume,
+                                 @Field("GenderPerfume") String GenderPerfume,
                                  @Field("User_id") String User_id);
 
     @FormUrlEncoded
@@ -43,11 +43,13 @@ public interface APIService {
                                 @Field("NamaPerfume") String NamaPerfume,
                                 @Field("DeskripsiPerfume") String DeskripsiPerfume,
                                 @Field("JenisPerfume") String JenisPerfume,
-                                @Field("UkuranPerfume") Integer UkuranPerfume,
+                                @Field("UkuranPerfume") String UkuranPerfume,
                                 @Field("HargaPerfume") Integer HargaPerfume,
-                                @Field("GenderPerfume") String GenderPerfume,
+                                @Field("GenderPerfume") int GenderPerfume,
                                 @Field("User_id") String User_id);
 
     @DELETE("perfume/{id}")
     Call<ValueNoData> deleteAdd(@Path("id") String id);
+
+    Call<ValueNoData> addPerfume(String userId, String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender);
 }
