@@ -5,5 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="Base.Theme.ScentLibrary.ActionBar" parent="Theme.Material3.DayNight">
+        <!-- Customize your Light theme her -->
+        <!-- <Item name="ColorPrimary">@color/my_light_primary</item> -->
+    </style>
     <style name="Theme.ScentLibrary" parent="Base.Theme.ScentLibrary" />
+    <style name="Theme.ScentLibrary.ActionBar" parent="Base.Theme.ScentLibrary.ActionBar" />
 </resources>
