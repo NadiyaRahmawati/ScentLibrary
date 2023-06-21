@@ -5,35 +5,35 @@ import android.os.Parcelable;
 
 public class Add implements Parcelable {
     private String id;
-    private String MerekPerfume;
-    private String NamaPerfume;
-    private String DeskripsiPerfume;
-    private String JenisPefume;
-    private Integer UkuranPerfume;
-    private Integer HargaPerfume;
-    private String GenderPerfume;
+    private String merekperfume;
+    private String namaperfume;
+    private String deskripsiperfume;
+    private String jenisperfume;
+    private Integer ukuranperfume;
+    private Integer hargaperfume;
+    private String genderperfume;
 
     protected Add(Parcel in) {
         id = in.readString();
-        MerekPerfume = in.readString();
-        NamaPerfume = in.readString();
-        DeskripsiPerfume = in.readString();
-        JenisPefume = in.readString();
-        UkuranPerfume = in.readInt();
-        HargaPerfume = in.readInt();
-        GenderPerfume = in.readString();
+        merekperfume = in.readString();
+        namaperfume = in.readString();
+        deskripsiperfume = in.readString();
+        jenisperfume = in.readString();
+        ukuranperfume = in.readInt();
+        hargaperfume = in.readInt();
+        genderperfume = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(id);
-        dest.writeString(MerekPerfume);
-        dest.writeString(NamaPerfume);
-        dest.writeString(DeskripsiPerfume);
-        dest.writeString(JenisPefume);
-        dest.writeInt(UkuranPerfume);
-        dest.writeInt(HargaPerfume);
-        dest.writeString(GenderPerfume);
+        dest.writeString(merekperfume);
+        dest.writeString(namaperfume);
+        dest.writeString(deskripsiperfume);
+        dest.writeString(jenisperfume);
+        dest.writeInt(ukuranperfume);
+        dest.writeInt(hargaperfume);
+        dest.writeString(genderperfume);
     }
 
     @Override
@@ -61,59 +61,59 @@ public class Add implements Parcelable {
     }
 
     public String getMerekPerfume() {
-        return MerekPerfume;
+        return merekperfume;
     }
 
     public void setMerekPerfume(String MerekPerfume) {
-        this.MerekPerfume = MerekPerfume;
+        this.merekperfume = MerekPerfume;
     }
 
     public String getNamaPerfume() {
-        return NamaPerfume;
+        return namaperfume;
     }
 
     public void setNamaPerfume(String NamaPerfume) {
-        this.NamaPerfume = NamaPerfume;
+        this.namaperfume = NamaPerfume;
     }
 
     public String getDeskripsiPerfume() {
-        return DeskripsiPerfume;
+        return deskripsiperfume;
     }
 
     public void setDeskripsiPerfume(String DeskripsiPerfume) {
-        this.DeskripsiPerfume = DeskripsiPerfume;
+        this.deskripsiperfume = DeskripsiPerfume;
     }
 
     public String getJenisPefume() {
-        return JenisPefume;
+        return jenisperfume;
     }
 
     public void setJenisPefume(String JenisPefume) {
-        this.JenisPefume = JenisPefume;
+        this.jenisperfume = JenisPefume;
     }
 
     public Integer getUkuranPerfume() {
-        return UkuranPerfume;
+        return ukuranperfume;
     }
 
     public void setUkuranPerfume(Integer UkuranPerfume) {
-        this.UkuranPerfume = UkuranPerfume;
+        this.ukuranperfume = UkuranPerfume;
     }
 
     public Integer getHargaPerfume() {
-        return HargaPerfume;
+        return hargaperfume;
     }
 
     public void setHargaPerfume(Integer HargaPerfume) {
-        this.HargaPerfume = HargaPerfume;
+        this.hargaperfume = HargaPerfume;
     }
 
     public String getGenderPerfume() {
-        return GenderPerfume;
+        return genderperfume;
     }
 
     public void setGenderPerfume(String GenderPerfume) {
-        this.GenderPerfume = GenderPerfume;
+        this.genderperfume = GenderPerfume;
     }
 }
 

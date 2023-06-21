@@ -22,34 +22,34 @@ public interface APIService {
     Call<ValueData<User>> register(@Field("username") String username,
                                    @Field("password") String password);
 
-    @FormUrlEncoded
-    @GET("perfume")
+    @GET("addperfume")
     Call<ValueData<List<Add>>> getPerfume();
 
     @FormUrlEncoded
-    @POST("perfume")
-    Call<ValueNoData> addPerfume(@Field("MerekPerfume") String MerkPerfume,
-                                 @Field("NamaPerfume") String NamaPerfume,
-                                 @Field("DeskripsiPerfume") String DeskripsiPerfume,
-                                 @Field("JenisPerfume") String JenisPerfume,
-                                 @Field("UkuranPerfume") Integer UkuranPerfume,
-                                 @Field("HargaPerfume") Integer HargaPerfume,
-                                 @Field("GenderPerfume") String GenderPerfume,
-                                 @Field("User_id") String User_id);
+    @POST("addperfume")
+    Call<ValueNoData> addPerfume(@Field("merekperfume") String MerkPerfume,
+                                 @Field("namaperfume") String NamaPerfume,
+                                 @Field("deskripsiperfume") String DeskripsiPerfume,
+                                 @Field("jenisperfume") String JenisPerfume,
+                                 @Field("ukuranperfume") Integer UkuranPerfume,
+                                 @Field("hargaperfume") Integer HargaPerfume,
+                                 @Field("genderperfume") String GenderPerfume,
+                                 @Field("user_id") String User_id);
 
     @FormUrlEncoded
-    @PUT("perfume")
-    Call<ValueNoData> updateAdd(@Field("MerekPerfume") String MerkPerfume,
-                                @Field("NamaPerfume") String NamaPerfume,
-                                @Field("DeskripsiPerfume") String DeskripsiPerfume,
-                                @Field("JenisPerfume") String JenisPerfume,
-                                @Field("UkuranPerfume") String UkuranPerfume,
-                                @Field("HargaPerfume") Integer HargaPerfume,
-                                @Field("GenderPerfume") int GenderPerfume,
-                                @Field("User_id") String User_id);
+    @PUT("addperfume")
+    Call<ValueNoData> updateAdd(@Field("id") String id,
+                                @Field("merekperfume") String MerkPerfume,
+                                @Field("namaperfume") String NamaPerfume,
+                                @Field("deskripsiperfume") String DeskripsiPerfume,
+                                @Field("jenisperfume") String JenisPerfume,
+                                @Field("ukuranperfume") String UkuranPerfume,
+                                @Field("hargaperfume") String HargaPerfume,
+                                @Field("genderperfume") String GenderPerfume);
 
-    @DELETE("perfume/{id}")
+
+    @DELETE("addperfume/{id}")
     Call<ValueNoData> deleteAdd(@Path("id") String id);
 
-    Call<ValueNoData> addPerfume(String userId, String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender);
+//    Call<ValueNoData> addPerfume(String userId, String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender);
 }

@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
+            android:layout_below="@+id/til_Merek"
             app:counterMaxLength="180">
             <EditText
                 android:id="@+id/et_NamaPefume"
@@ -47,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
+            android:layout_below="@+id/til_NamaPerfume"
             app:counterMaxLength="180">
 
             <EditText
@@ -64,6 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
+            android:layout_below="@+id/til_Deskripsi"
             app:counterMaxLength="180">
 
             <EditText
@@ -81,6 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
+            android:layout_below="@+id/til_Jenis"
             app:counterMaxLength="180">
 
             <EditText
@@ -98,6 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
+            android:layout_below="@+id/til_Ukuran"
             app:counterMaxLength="180">
 
             <EditText
@@ -115,6 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
+            android:layout_below="@+id/til_Harga"
             app:counterMaxLength="180">
 
             <EditText
@@ -133,6 +139,8 @@
             android:layout_height="wrap_content"
             android:text="Add"
             android:textAllCaps="true"
+            android:layout_below="@+id/til_Gender"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="16dp"/>
 
         <ProgressBar

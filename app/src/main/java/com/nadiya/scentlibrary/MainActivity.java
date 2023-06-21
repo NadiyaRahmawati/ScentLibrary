@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        if (!Utilities.checkValue(MainActivity.this, "xUserId")){
+        if (!Utilities.checkValue(MainActivity.this, "xUserId")) {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -168,13 +168,14 @@ public class MainActivity extends AppCompatActivity {
         binding.progressBar.setVisibility(View.GONE);
     }
 
-    public boolean onCleateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_perfume, menu);
-        return  true;
+        return true;
     }
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_logout){
+        if (id == R.id.action_logout) {
             Utilities.clearuser(this);
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);

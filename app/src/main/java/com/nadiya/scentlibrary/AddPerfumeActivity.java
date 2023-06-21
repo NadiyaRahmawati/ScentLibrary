@@ -75,7 +75,7 @@ public class AddPerfumeActivity extends AppCompatActivity {
     private void addPerfume(String userId, String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
         APIService api = Utilities.getRetrofit().create(APIService.class);
-        Call<ValueNoData> call = api.addPerfume(userId, merek, nama, deskripsi, jenis, ukuran, harga, gender);
+        Call<ValueNoData> call = api.addPerfume(merek, nama, deskripsi, jenis, ukuran, harga, gender, userId);
         call.enqueue(new Callback<ValueNoData>() {
             @Override
             public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {

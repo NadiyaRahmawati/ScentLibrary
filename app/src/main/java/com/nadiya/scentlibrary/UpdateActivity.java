@@ -31,8 +31,8 @@ public class UpdateActivity extends AppCompatActivity {
         binding.etNamaPefume.setText(add.getNamaPerfume());
         binding.etDeskripsi.setText(add.getDeskripsiPerfume());
         binding.etJenis.setText(add.getJenisPefume());
-        binding.etUkuran.setText(add.getUkuranPerfume());
-        binding.etHarga.setText(add.getHargaPerfume());
+        binding.etUkuran.setText(String.valueOf(add.getUkuranPerfume()));
+        binding.etHarga.setText(String.valueOf(add.getHargaPerfume()));
         binding.etGender.setText(add.getGenderPerfume());
 
         binding.btnUpdatePerfume.setOnClickListener(new View.OnClickListener() {
@@ -77,13 +77,13 @@ public class UpdateActivity extends AppCompatActivity {
                 }
 
                 if (bolehUpdate) {
-                    updateAdd(id, Merek, NamaPerfume, Deskripsi, Jenis, Ukuran, Harga, Gender);
+                    updateAdd(id, Merek, NamaPerfume, Deskripsi, Jenis, String.valueOf(Ukuran), String.valueOf(Harga), Gender);
                 }
             }
         });
     }
 
-    private void updateAdd(String Id, String Merek, String NamaPerfume , String Deskripsi , String Jenis, int Ukuran, int Harga, String Gender) {
+    private void updateAdd(String Id, String Merek, String NamaPerfume , String Deskripsi , String Jenis, String Ukuran, String Harga, String Gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
         APIService api = Utilities.getRetrofit().create(APIService.class);
         Call<ValueNoData> call = api.updateAdd(Id, Merek, NamaPerfume, Deskripsi, Jenis, Ukuran, Harga, Gender);

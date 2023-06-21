@@ -84,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
                         User user = response.body().getData();
                         Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_SHORT).show();
                         Utilities.setValue(RegisterActivity.this, "xUserId", user.getId());
-                        Utilities.setValue(RegisterActivity.this, "xUsername", username);
+                        Toast.makeText(RegisterActivity.this, "Register Success!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
@@ -100,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onFailure(Call<ValueData<User>> call, Throwable t) {
                 binding.progressBar.setVisibility(View.GONE);
                 System.out.println("Retrofit Error : " + t.getMessage());
-                Toast.makeText(RegisterActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Retrofit Error : ", Toast.LENGTH_SHORT).show();
             }
         }));
     }
