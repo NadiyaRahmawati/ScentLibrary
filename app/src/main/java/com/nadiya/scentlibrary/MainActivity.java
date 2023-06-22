@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                             String id = add.getId();
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                             builder.setTitle("Konfirmasi");
-                            builder.setMessage("Yakin ingin menghapus Add '" + data.get(position).getId() + "' ?");
+                            builder.setMessage("Yakin ingin menghapus Add" + data.get(position).getId() + "?");
                             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
