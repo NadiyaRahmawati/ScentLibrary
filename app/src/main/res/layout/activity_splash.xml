@@ -28,6 +28,7 @@
         android:textColor="@android:color/holo_red_light"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_perfume"/>
@@ -36,13 +37,14 @@
         android:id="@+id/tv_slogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
+        android:fontFamily="cursive"
         android:text="Awali Petualangan Aroma Pribadimu di Sini"
         android:textColor="@android:color/holo_red_light"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"/>
 

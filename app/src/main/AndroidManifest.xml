@@ -23,7 +23,7 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.ScentLibrary.ActionBar"
+            android:theme="@style/Theme.ScentLibrary"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AddPerfumeActivity"
@@ -35,11 +35,11 @@
             android:name=".SplashActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.ScentLibrary.ActionBar"/>
+            android:theme="@style/Theme.ScentLibrary"/>
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:theme="@style/Theme.ScentLibrary.ActionBar"
+            android:theme="@style/Theme.ScentLibrary"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
