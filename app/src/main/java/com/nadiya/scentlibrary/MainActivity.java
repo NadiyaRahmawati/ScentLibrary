@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.nadiya.scentlibrary.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AddViewAdapter addViewAdapter;
 
-    private List<Add> data;
+    private List<Add> data = new ArrayList<>();
 
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                             String id = add.getId();
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                             builder.setTitle("Konfirmasi");
-                            builder.setMessage("Yakin ingin menghapus Add" + data.get(position).getId() + "?");
+                            builder.setMessage("Yakin ingin menghapus Add" + data.get(position).getMerekPerfume() + data.get(position).getNamaPerfume() + data.get(position).getDeskripsiPerfume() + data.get(position).getJenisPefume() + data.get(position).getUkuranPerfume() + data.get(position).getHargaPerfume() + data.get(position).getGenderPerfume() + "?");
                             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
