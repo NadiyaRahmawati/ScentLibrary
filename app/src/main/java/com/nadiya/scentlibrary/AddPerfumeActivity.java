@@ -65,17 +65,17 @@ public class AddPerfumeActivity extends AppCompatActivity {
                     binding.etGender.setError("Gender tidak boleh kosong!");
                 }
                 if (bolehAdd) {
-                    String userId = Utilities.getValue(AddPerfumeActivity.this, "xUserId");
-                    addPerfume(userId, merek, nama, deskripsi, jenis, Ukuran, Harga, gender);
+                    String userid = Utilities.getValue(AddPerfumeActivity.this, "xUserId");
+                    addPerfume(userid, merek, nama, deskripsi, jenis, Ukuran, Harga, gender);
                 }
             }
         });
     }
 
-    private void addPerfume(String userId, String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender) {
+    private void addPerfume(String userid, String merek, String nama, String deskripsi, String jenis, int ukuran, int harga, String gender) {
         binding.progressBar.setVisibility(View.VISIBLE);
         APIService api = Utilities.getRetrofit().create(APIService.class);
-        Call<ValueNoData> call = api.addPerfume(merek, nama, deskripsi, jenis, ukuran, harga, gender, userId);
+        Call<ValueNoData> call = api.addPerfume(merek, nama, deskripsi, jenis, ukuran, harga, gender, userid);
         call.enqueue(new Callback<ValueNoData>() {
             @Override
             public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
